@@ -5,54 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Форма зворотного зв'язку | AI4Teens</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма зворотного зв'язку | AI4Teens</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-100 min-h-screen py-10 px-4 text-gray-800">
 
-  <main>
-    <h1>Зв'яжіться з нами</h1>
+  <main class="max-w-xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-8">
+    <h1 class="text-2xl md:text-3xl font-bold mb-6 text-center">Зв'яжіться з нами</h1>
 
-    <form id="feedbackForm" novalidate>
+    <form id="feedbackForm" novalidate class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-      <div>
-        <label for="username">Ім'я</label>
-        <input type="text" id="username" name="username" autocomplete="name">
-        <p id="usernameError" class="hidden"></p>
+      <div class="flex flex-col gap-1">
+        <label for="username" class="font-medium">Ім'я</label>
+        <input type="text" id="username" name="username" autocomplete="name"
+          class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 transition">
+        <p id="usernameError" class="hidden text-sm text-red-600"></p>
       </div>
 
-      <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" autocomplete="email">
-        <p id="emailError" class="hidden"></p>
+      <div class="flex flex-col gap-1">
+        <label for="email" class="font-medium">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email"
+          class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 transition">
+        <p id="emailError" class="hidden text-sm text-red-600"></p>
       </div>
 
-      <div>
-        <label for="phone">Телефон</label>
-        <input type="tel" id="phone" name="phone" autocomplete="tel">
-        <p id="phoneError" class="hidden"></p>
+      <div class="flex flex-col gap-1">
+        <label for="phone" class="font-medium">Телефон</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel"
+          class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 transition">
+        <p id="phoneError" class="hidden text-sm text-red-600"></p>
       </div>
 
-      <div>
-        <label for="message">Повідомлення</label>
-        <textarea id="message" name="message" rows="5"></textarea>
-        <p id="messageError" class="hidden"></p>
+      <div class="flex flex-col gap-1 md:col-span-2">
+        <label for="message" class="font-medium">Повідомлення</label>
+        <textarea id="message" name="message" rows="5"
+          class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 transition"></textarea>
+        <p id="messageError" class="hidden text-sm text-red-600"></p>
       </div>
 
-      <div>
-        <input type="checkbox" id="agreement" name="agreement">
-        <label for="agreement">Погоджуюсь з політикою конфіденційності</label>
-        <p id="agreementError" class="hidden"></p>
+      <div class="flex flex-col gap-1 md:col-span-2">
+        <div class="flex items-start gap-3">
+          <input type="checkbox" id="agreement" name="agreement"
+            class="mt-1 h-5 w-5 rounded border-gray-300 focus-visible:ring-2 focus-visible:ring-blue-500">
+          <label for="agreement" class="text-sm">Погоджуюсь з політикою конфіденційності</label>
+        </div>
+        <p id="agreementError" class="hidden text-sm text-red-600"></p>
       </div>
 
-      <button type="submit">Надіслати</button>
+      <div class="md:col-span-2">
+        <button type="submit"
+          class="w-full md:w-auto px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500 transition">
+          Надіслати
+        </button>
+      </div>
 
     </form>
   </main>
 
-  <div id="successModal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div>
-      <h2 id="modalTitle">Дякуємо!</h2>
-      <p>Форма успішно пройшла клієнтську валідацію. Демонстрація успішного надсилання.</p>
-      <button type="button" id="closeModal">Закрити</button>
+  <div id="successModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center shadow-lg">
+      <h2 id="modalTitle" class="text-xl font-bold mb-3">Дякуємо!</h2>
+      <p class="mb-5">Форма успішно пройшла клієнтську валідацію. Демонстрація успішного надсилання.</p>
+      <button type="button" id="closeModal"
+        class="px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500 transition">
+        Закрити
+      </button>
     </div>
   </div>
 
